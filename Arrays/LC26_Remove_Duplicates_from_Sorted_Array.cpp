@@ -27,31 +27,30 @@
 // Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
 // Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
 // It does not matter what you leave beyond the returned k (hence they are underscores).
- 
+
 // Constraints:
 // 1 <= nums.length <= 3 * 104
 // -100 <= nums[i] <= 100
 // nums is sorted in non-decreasing order.
 
-
-
-
-
-class Solution {
+class Solution
+{
 public:
-    int removeDuplicates(vector<int>& nums) {
-        int n=nums.size();
-        if(n==0 || n==1)
+    int removeDuplicates(vector<int> &nums)
+    {
+        int n = nums.size();
+        if (n == 0 || n == 1)
             return n;
-        int k=0;
-        for(int i=0 ; i<n-1 ;i++ )
+        int k = 0;
+        for (int i = 0; i < n - 1; i++)
         {
-            if(nums[i]!=nums[i+1]){
+            if (nums[i] != nums[i + 1])
+            {
                 nums[k] = nums[i];
                 k++;
             }
         }
-        nums[k++]=nums[n-1];
+        nums[k++] = nums[n - 1];
         return k;
     }
 };

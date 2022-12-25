@@ -19,24 +19,24 @@
 // Input: prices = [7,6,4,3,1]
 // Output: 0
 // Explanation: There is no way to make a positive profit, so we never buy the stock to achieve the maximum profit of 0.
- 
+
 // Constraints:
 // 1 <= prices.length <= 3 * 104
 // 0 <= prices[i] <= 104
 
-
-
-class Solution {
+class Solution
+{
 public:
-    int maxProfit(vector<int>& prices) {
+    int maxProfit(vector<int> &prices)
+    {
         int maxprofit = 0;
         int profit;
-        for(int i=0 ; i<prices.size()-1 ; i++)
+        for (int i = 0; i < prices.size() - 1; i++)
         {
-            if(prices[i]<prices[i+1])
+            if (prices[i] < prices[i + 1])
             {
-                profit = prices[i+1]-prices[i];
-                maxprofit+=profit;
+                profit = prices[i + 1] - prices[i];
+                maxprofit += profit;
             }
         }
         return maxprofit;

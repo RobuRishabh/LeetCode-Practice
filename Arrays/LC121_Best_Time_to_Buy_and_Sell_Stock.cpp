@@ -18,22 +18,21 @@
 // 1 <= prices.length <= 105
 // 0 <= prices[i] <= 104
 
-
-
-class Solution {
+class Solution
+{
 public:
-    int maxProfit(vector<int>& prices)
+    int maxProfit(vector<int> &prices)
     {
         int minNo = INT_MAX;
         int profit;
         int maxprofit = 0;
-        for(int i=0; i<prices.size(); i++)
+        for (int i = 0; i < prices.size(); i++)
         {
             minNo = min(minNo, prices[i]);
             profit = abs(minNo - prices[i]);
             maxprofit = max(maxprofit, profit);
         }
-        
+
         return maxprofit;
     }
 };

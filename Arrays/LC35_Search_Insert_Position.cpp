@@ -12,40 +12,37 @@
 // Example 3:
 // Input: nums = [1,3,5,6], target = 7
 // Output: 4
- 
+
 // Constraints:
 // 1 <= nums.length <= 104
 // -104 <= nums[i] <= 104
 // nums contains distinct values sorted in ascending order.
 // -104 <= target <= 104
 
-
-
-
-class Solution {
+class Solution
+{
 public:
-    int searchInsert(vector<int>& nums, int target) 
+    int searchInsert(vector<int> &nums, int target)
     {
-        int s=0;
-        int e=nums.size()-1;
+        int s = 0;
+        int e = nums.size() - 1;
         int mid;
-        while(s<=e)
+        while (s <= e)
         {
-            int mid=s+(e-s)/2;
-            if(nums[mid]==target)
+            int mid = s + (e - s) / 2;
+            if (nums[mid] == target)
             {
                 return mid;
             }
-            else if(nums[mid]>target)
+            else if (nums[mid] > target)
             {
-                e=mid-1;
+                e = mid - 1;
             }
             else
             {
-                s=mid+1;
-            } 
-    }
+                s = mid + 1;
+            }
+        }
         return s;
     }
-    
 };

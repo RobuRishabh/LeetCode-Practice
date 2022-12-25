@@ -30,25 +30,27 @@
 // 1 <= nums.length <= 104
 // -1000 <= nums[i] <= 1000
 
-class Solution {
+class Solution
+{
 public:
-    int pivotIndex(vector<int>& nums) {
+    int pivotIndex(vector<int> &nums)
+    {
         int n = nums.size();
-        int totalsum=0;
-        for(int i=0; i<n; i++)
+        int totalsum = 0;
+        for (int i = 0; i < n; i++)
         {
-            totalsum+=nums[i];
+            totalsum += nums[i];
         }
         int lsum = 0;
         int rsum = totalsum;
-        for(int i=0; i<n; i++)
+        for (int i = 0; i < n; i++)
         {
-            rsum-=nums[i];
-            if(lsum==rsum)
+            rsum -= nums[i];
+            if (lsum == rsum)
             {
                 return i;
             }
-            lsum+=nums[i];
+            lsum += nums[i];
         }
         return -1;
     }

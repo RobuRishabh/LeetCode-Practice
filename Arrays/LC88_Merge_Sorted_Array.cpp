@@ -20,7 +20,7 @@
 // Explanation: The arrays we are merging are [] and [1].
 // The result of the merge is [1].
 // Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
- 
+
 // Constraints:
 // nums1.length == m + n
 // nums2.length == n
@@ -28,34 +28,32 @@
 // 1 <= m + n <= 200
 // -109 <= nums1[i], nums2[j] <= 109
 
-
-
-
-class Solution {
+class Solution
+{
 public:
-    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
-       int i = m-1;
-       int j = n-1;
-       int k = m+n-1;
-       while(i>=0 && j>=0)
-       {
-           if(nums1[i]>nums2[j])
-           {
-               nums1[k--]=nums1[i--];
-           }
-           else
-           {
-               nums1[k--]=nums2[j--];
-           }
-       }
-       while(i>=0)
-       {
-           nums1[k--]=nums1[i--];
-       }
-       while(j>=0)
-       {
-          nums1[k--]=nums2[j--]; 
-       }
-
+    void merge(vector<int> &nums1, int m, vector<int> &nums2, int n)
+    {
+        int i = m - 1;
+        int j = n - 1;
+        int k = m + n - 1;
+        while (i >= 0 && j >= 0)
+        {
+            if (nums1[i] > nums2[j])
+            {
+                nums1[k--] = nums1[i--];
+            }
+            else
+            {
+                nums1[k--] = nums2[j--];
+            }
+        }
+        while (i >= 0)
+        {
+            nums1[k--] = nums1[i--];
+        }
+        while (j >= 0)
+        {
+            nums1[k--] = nums2[j--];
+        }
     }
 };

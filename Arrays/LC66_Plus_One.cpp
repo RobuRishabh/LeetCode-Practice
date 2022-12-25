@@ -21,33 +21,33 @@
 // Explanation: The array represents the integer 9.
 // Incrementing by one gives 9 + 1 = 10.
 // Thus, the result should be [1,0].
- 
+
 // Constraints:
 // 1 <= digits.length <= 100
 // 0 <= digits[i] <= 9
 // digits does not contain any leading 0's.
 
-
-class Solution {
+class Solution
+{
 public:
-    vector<int> plusOne(vector<int>& digits)
+    vector<int> plusOne(vector<int> &digits)
     {
-        int n=digits.size();
-        int idx = n-1;
-        while(idx>=0){
-            if(digits[idx]<9)
+        int n = digits.size();
+        int idx = n - 1;
+        while (idx >= 0)
+        {
+            if (digits[idx] < 9)
             {
-                digits[idx]++; 
+                digits[idx]++;
                 return digits;
             }
-            else if (digits[idx]==9)
+            else if (digits[idx] == 9)
             {
-                digits[idx]=0;
+                digits[idx] = 0;
             }
             idx--;
         }
-        digits.insert(digits.begin(),1);
-    return digits;
+        digits.insert(digits.begin(), 1);
+        return digits;
     }
-    
 };

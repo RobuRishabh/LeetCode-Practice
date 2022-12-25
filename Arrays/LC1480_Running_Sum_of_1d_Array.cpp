@@ -14,19 +14,21 @@
 // Example 3:
 // Input: nums = [3,1,2,10,1]
 // Output: [3,4,6,16,17]
- 
+
 // Constraints:
 // 1 <= nums.length <= 1000
 // -10^6 <= nums[i] <= 10^6
 
-class Solution {
+class Solution
+{
 public:
-    vector<int> runningSum(vector<int>& nums) {
+    vector<int> runningSum(vector<int> &nums)
+    {
         vector<int> sum;
-        for(int i=1; i<nums.size(); i++)
+        for (int i = 1; i < nums.size(); i++)
         {
-            nums[i]+=nums[i-1];
+            nums[i] += nums[i - 1];
         }
-        return nums ;
+        return nums;
     }
 };

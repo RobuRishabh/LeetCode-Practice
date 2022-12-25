@@ -8,29 +8,28 @@
 // Example 2:
 // Input: nums = [0]
 // Output: [0]
- 
+
 // Constraints:
 
 // 1 <= nums.length <= 104
 // -231 <= nums[i] <= 231 - 1
 
-
-
-
-class Solution {
+class Solution
+{
 public:
-    void moveZeroes(vector<int>& nums) {
-       int j=0;
-       for(int i=0 ; i<nums.size() ; i++)
-       {
-           if(nums[i]!=0)
-           {
-               nums[j++]=nums[i];
-           }
-       }
-       while(j<nums.size())
-           {
-               nums[j++]=0;
-           } 
+    void moveZeroes(vector<int> &nums)
+    {
+        int j = 0;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            if (nums[i] != 0)
+            {
+                nums[j++] = nums[i];
+            }
+        }
+        while (j < nums.size())
+        {
+            nums[j++] = 0;
+        }
     }
 };
